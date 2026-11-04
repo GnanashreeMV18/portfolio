@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Gnanashree Mysuru Venkatesh, a Cardiff-based data analyst.">
+<title>Gnanashree Mysuru Venkatesh</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: one long poster-style page. Midnight ground, huge serif caps with a lavender italic word, arched monogram portrait, plum panels for work, process, skills and contact. */
+:root{
+  --bg:#0b0d26; --panel:#251a3d; --panel2:#1c1633; --line:#3d2f5e; --cream:#f4e8de; --lav:#b79ae0; --muted:#b4aacb;
+  --chip:#33254f; --arch1:#cbb2ee; --arch2:#6f4fa8; --on-lav:#1a1030;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --bg:#f5f0fb; --panel:#ffffff; --panel2:#ece4f7; --line:#d7c9ec; --cream:#1e1238; --lav:#6a43b5; --muted:#5f5478;
+  --chip:#e6dcf5; --arch1:#d9c5f3; --arch2:#8a68c8; --on-lav:#ffffff; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f5f0fb; --panel:#ffffff; --panel2:#ece4f7; --line:#d7c9ec; --cream:#1e1238; --lav:#6a43b5; --muted:#5f5478;
+  --chip:#e6dcf5; --arch1:#d9c5f3; --arch2:#8a68c8; --on-lav:#ffffff; color-scheme:light}
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.65;
+  padding-block:28px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.page{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+h1,h2,h3,p,ul,dl,dd{margin:0}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--lav);outline-offset:3px}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.top .open{display:flex;align-items:center;gap:10px}
+.top .open i{width:22px;height:22px;border-radius:50%;background:var(--panel);border:1px solid var(--line);display:grid;place-items:center}
+.top .open i::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--lav)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 24px;align-items:end}
+.display{font-family:var(--serif);font-weight:400;text-transform:uppercase;font-size:clamp(3.2rem,11vw,7.2rem);line-height:.9;letter-spacing:-.01em}
+.display em{display:block;text-transform:none;font-style:italic;color:var(--lav);font-size:1.05em;margin-top:-.02em;letter-spacing:-.02em}
+.tag{margin-top:26px;font-size:1.15rem;max-width:26em;color:var(--muted)}
+.tag b{color:var(--lav);font-weight:500}
+.glance{background:linear-gradient(160deg,var(--panel),var(--panel2));border:1px solid var(--lav);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:16px;min-width:0;width:min(100%,340px);justify-self:end;box-shadow:0 0 40px color-mix(in srgb,var(--lav) 22%,transparent)}
+.gh{display:flex;justify-content:space-between;align-items:center}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:14px 12px;display:flex;flex-direction:column;gap:4px;min-width:0;background:var(--bg)}
+.tile b{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,6vw,2.6rem);line-height:1;color:var(--lav);font-variant-numeric:tabular-nums}
+.tile span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.35}
+.tile.hot{background:linear-gradient(160deg,var(--arch1),var(--arch2));border-color:transparent}
+.tile.hot b{color:var(--on-lav)}
+.tile.hot span{color:var(--on-lav);opacity:.85}
+.gnote{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-align:center;border-top:1px solid var(--line);padding-top:12px}
+.arch{aspect-ratio:3/4;border-radius:999px 999px 6px 6px;background:linear-gradient(170deg,var(--arch1),var(--arch2));overflow:hidden;display:block;width:100%}
+.seal{display:block;width:150px;height:150px;border-radius:50%;background:var(--bg);border:1px solid var(--lav)}
+.seal text{fill:var(--lav);font-family:var(--sans);font-size:8.5px;letter-spacing:0;text-transform:uppercase}
+.seal .m{font-family:var(--serif);font-style:italic;font-size:30px;letter-spacing:0;text-transform:none}
+
+.intro{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:clamp(22px,4vw,40px);display:grid;grid-template-columns:minmax(0,.8fr) 1px minmax(0,1.2fr);gap:24px 32px;align-items:center}
+.intro .rule{align-self:stretch;background:var(--line)}
+.intro h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,6vw,3.4rem);line-height:1;text-transform:uppercase}
+.intro h3{font-weight:400;font-size:1.15rem;margin-bottom:8px}
+.intro p{color:var(--muted);max-width:44ch}
+.vis{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.vis span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--lav)}
+
+.sech{display:flex;align-items:center;gap:20px}
+.sech .eyebrow{white-space:nowrap}
+.sech::after{content:"";height:1px;flex:1;background:var(--line);min-width:20px}
+.sech small{order:3;color:var(--muted);font-size:12px}
+.sech small{white-space:nowrap}
+
+/* work */
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.case{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(160deg,var(--arch1),var(--arch2));display:block;width:100%}
+.thumb .n{position:absolute;top:0;left:0;background:var(--panel);color:var(--lav);border-bottom-right-radius:12px;padding:6px 14px;font-size:13px;letter-spacing:.1em}
+.case .in{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1;min-width:0}
+.case h3{font-size:14px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+.case .kind{font-size:13px;color:var(--muted)}
+.case p{font-size:14.5px;color:var(--muted)}
+.case ul{padding-left:1.1em;display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--lav);border-radius:999px;padding:4px 12px;color:var(--cream)}
+.case .go{margin-top:auto;padding-top:6px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--lav)}
+
+/* process + skills */
+.duo{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px;align-items:start}
+.steps{display:flex;flex-direction:column;gap:22px;margin-top:20px;list-style:none;padding:0}
+.steps li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;align-items:start}
+.steps .ic{width:48px;height:48px;border-radius:50%;background:var(--chip);display:grid;place-items:center;color:var(--lav);font-family:var(--serif);font-style:italic;font-size:1.4rem}
+.steps b{font-weight:500;letter-spacing:.2em;text-transform:uppercase;font-size:13px;display:block}
+.steps span{font-size:14px;color:var(--muted)}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:20px}
+.chip{background:var(--chip);border-radius:6px;padding:12px 10px;text-align:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.tool{width:auto;min-width:56px;padding:0 14px;height:48px;border-radius:12px;background:var(--panel);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--lav)}
+.sub{margin-top:30px}
+
+/* journey */
+.journey{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:clamp(22px,4vw,36px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+.journey .when{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--lav)}
+.journey h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;line-height:1.15;margin:4px 0}
+.journey p{font-size:14px;color:var(--muted)}
+
+/* contact */
+.contact{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:clamp(22px,4vw,40px);display:grid;grid-template-columns:minmax(0,.9fr) 1px minmax(0,1.1fr);gap:24px 32px;align-items:center}
+.contact .rule{align-self:stretch;background:var(--line)}
+.contact h2{font-family:var(--serif);font-weight:400;text-transform:uppercase;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1}
+.contact h2 em{display:block;text-transform:none;color:var(--lav)}
+.contact .lead{margin-top:14px;color:var(--muted);max-width:30ch}
+.rows{display:flex;flex-direction:column;gap:12px;min-width:0}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;min-width:0}
+.row .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);width:78px;flex:none}
+.row .v{overflow-wrap:anywhere;min-width:0;flex:1 1 160px;font-size:15px}
+.copy{font:400 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border:1px solid var(--lav);background:none;color:var(--lav);border-radius:999px;cursor:pointer}
+.copy:hover{background:var(--lav);color:var(--on-lav)}
+.theme{align-self:center;font:400 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;background:none;border:1px solid var(--line);color:var(--muted);padding:6px 16px;border-radius:999px;cursor:pointer}
+.star{width:22px;height:22px;fill:var(--lav)}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .glance{justify-self:stretch;width:100%}
+  .intro,.contact{grid-template-columns:minmax(0,1fr)}
+  .intro .rule,.contact .rule{display:none}
+  .duo{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:no-preference){.copy{transition:background .15s,color .15s}}
+</style>
+</head>
+<body>
+
+
+<div class="page">
+
+  <div class="top">
+    <span class="eyebrow">&#10022;&nbsp; Data analyst &middot; Cardiff, UK</span>
+    <span class="eyebrow open">Open to UK roles <i></i></span>
+  </div>
+
+  <header class="hero">
+    <div>
+      <h1 class="display">Data into<em>Decisions</em></h1>
+      <p class="tag">I turn messy data into analysis people can act on, from SQL and Python to <b>clear, useful dashboards</b>.</p>
+    </div>
+    <aside class="glance" aria-label="At a glance">
+      <div class="gh"><span class="eyebrow">At a glance</span><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 8.8l7.1-.7z"/></svg></div>
+      <div class="tiles">
+        <div class="tile hot"><b>3</b><span>Years in QA and BI analysis</span></div>
+        <div class="tile"><b>6</b><span>Commercial products</span></div>
+        <div class="tile"><b>50k+</b><span>Images in my CNN</span></div>
+        <div class="tile hot"><b>~99%</b><span>Classification accuracy</span></div>
+      </div>
+      <p class="gnote">MSc Data Science, Cardiff University</p>
+    </aside>
+  </header>
+
+  <section class="intro">
+    <div>
+      <span class="eyebrow">Hi, I'm</span>
+      <h2 style="margin-top:10px">Gnanashree<br>Mysuru<br>Venkatesh</h2>
+    </div>
+    <span class="rule"></span>
+    <div>
+      <h3>Data analyst with an MSc in Data Science and Analytics</h3>
+      <p>Three years of QA and BI analysis at Indium Software's iXie Gaming division across six commercial products, then an MSc at Cardiff University. I work in SQL, Python, R, Power BI and Tableau, and I check data at the source before I trust it.</p>
+      <div class="vis"><span>Graduate visa</span><span>No sponsorship needed</span></div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sech"><span class="eyebrow">Featured work</span><small>Selected projects</small></div>
+    <div class="work" style="margin-top:22px">
+      <article class="case">
+        <svg class="thumb" viewBox="0 0 320 180" role="img" aria-label="Illustration of a time series split into trend and seasonal parts">
+          <path d="M20 120 C80 110 140 90 300 50" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M20 135 q14 -26 28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2"/>
+          <path d="M20 160 l10 -5 l10 7 l10 -6 l10 5 l10 -7 l10 6 l10 -4 l10 5 l10 -6 l10 4 l10 -5 l10 6 l10 -7 l10 5 l10 -4 l10 6 l10 -5 l10 4 l10 -6 l10 5 l10 -4 l10 6 l10 -5 l10 4" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.5"/>
+        </svg>
+        <div class="in">
+          <h3>Climate forecasting</h3>
+          <span class="kind">MSc dissertation, R</span>
+          <p>Singular Spectrum Analysis compared with ARIMA on four long-running environmental series, supervised by Prof. Andrey Pepelyshev.</p>
+          <ul>
+            <li>CO2, ENSO Niño 3.4, NASA GISTEMP and NSIDC Arctic sea ice.</li>
+            <li>SSA window of 60, ARIMA chosen on AIC, AICc and BIC.</li>
+            <li>24-month forecasts built with Rssa and forecast.</li>
+          </ul>
+          <div class="pills"><span class="pill">Time series</span><span class="pill">R</span><span class="pill">Forecasting</span></div>
+          <a class="go" href="https://github.com/GnanashreeMV18/ssa-climate-forecasting">View on GitHub &rarr;</a>
+        </div>
+      </article>
+
+      <article class="case">
+        <svg class="thumb" viewBox="0 0 320 180" role="img" aria-label="Illustration of a grid of image classes">
+          <g fill="#fff">
+            <rect x="30" y="24" width="30" height="30" rx="6" fill-opacity=".9"/><rect x="72" y="24" width="30" height="30" rx="6" fill-opacity=".45"/><rect x="114" y="24" width="30" height="30" rx="6" fill-opacity=".7"/><rect x="156" y="24" width="30" height="30" rx="6" fill-opacity=".3"/><rect x="198" y="24" width="30" height="30" rx="6" fill-opacity=".85"/><rect x="240" y="24" width="30" height="30" rx="6" fill-opacity=".5"/>
+            <rect x="30" y="66" width="30" height="30" rx="6" fill-opacity=".4"/><rect x="72" y="66" width="30" height="30" rx="6" fill-opacity=".85"/><rect x="114" y="66" width="30" height="30" rx="6" fill-opacity=".35"/><rect x="156" y="66" width="30" height="30" rx="6" fill-opacity=".8"/><rect x="198" y="66" width="30" height="30" rx="6" fill-opacity=".5"/><rect x="240" y="66" width="30" height="30" rx="6" fill-opacity=".9"/>
+            <rect x="30" y="108" width="30" height="30" rx="6" fill-opacity=".75"/><rect x="72" y="108" width="30" height="30" rx="6" fill-opacity=".3"/><rect x="114" y="108" width="30" height="30" rx="6" fill-opacity=".9"/><rect x="156" y="108" width="30" height="30" rx="6" fill-opacity=".45"/><rect x="198" y="108" width="30" height="30" rx="6" fill-opacity=".7"/><rect x="240" y="108" width="30" height="30" rx="6" fill-opacity=".3"/>
+          </g>
+          <text x="30" y="166" fill="#fff" fill-opacity=".85" font-family="Jost,Arial,sans-serif" font-size="11" letter-spacing="2">40+ CLASSES</text>
+        </svg>
+        <div class="in">
+          <h3>Traffic sign recognition</h3>
+          <span class="kind">Deep learning, Python</span>
+          <p>A convolutional neural network that classifies road signs, trained and evaluated on a labelled dataset of more than 50,000 images.</p>
+          <ul>
+            <li>50,000+ images across 40+ classes.</li>
+            <li>About 99% classification accuracy.</li>
+          </ul>
+          <div class="pills"><span class="pill">Python</span><span class="pill">CNN</span><span class="pill">Classification</span></div>
+          <a class="go" href="https://github.com/GnanashreeMV18/traffic-sign-recognition-deep-learning">View on GitHub &rarr;</a>
+        </div>
+      </article>
+
+      <article class="case">
+        <svg class="thumb" viewBox="0 0 320 180" role="img" aria-label="Illustration of a dashboard with bars and a line">
+          <g fill="#fff" fill-opacity=".35"><rect x="30" y="100" width="32" height="50" rx="3"/><rect x="76" y="70" width="32" height="80" rx="3"/><rect x="122" y="84" width="32" height="66" rx="3"/><rect x="168" y="48" width="32" height="102" rx="3"/><rect x="214" y="62" width="32" height="88" rx="3"/><rect x="260" y="30" width="32" height="120" rx="3"/></g>
+          <path d="M46 92 L92 64 L138 76 L184 40 L230 54 L276 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M24 152H300" stroke="#fff" stroke-opacity=".6"/>
+        </svg>
+        <div class="in">
+          <h3>Social media analysis</h3>
+          <span class="kind">SQL, Power BI, Tableau</span>
+          <p>Engagement and performance data prepared with SQL and shown in Power BI and Tableau dashboards, so reach and engagement can be compared at a glance.</p>
+          <div class="pills"><span class="pill">SQL</span><span class="pill">Power BI</span><span class="pill">Tableau</span></div>
+          <a class="go" href="https://github.com/GnanashreeMV18/social-media-reach-engagement-analysis">View on GitHub &rarr;</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="duo">
+    <div>
+      <div class="sech"><span class="eyebrow">My process</span></div>
+      <ol class="steps">
+        <li><span class="ic">1</span><div><b>Define</b><span>Pin down the question and what a useful answer looks like.</span></div></li>
+        <li><span class="ic">2</span><div><b>Check</b><span>Validate the data at the source and fix quality issues early.</span></div></li>
+        <li><span class="ic">3</span><div><b>Analyse</b><span>SQL, Python or R, with the right statistical or ML method.</span></div></li>
+        <li><span class="ic">4</span><div><b>Deliver</b><span>Dashboards and short write-ups that people can act on.</span></div></li>
+      </ol>
+    </div>
+    <div>
+      <div class="sech"><span class="eyebrow">Skills and expertise</span></div>
+      <div class="chips">
+        <div class="chip">Data analysis</div><div class="chip">Time series</div><div class="chip">Forecasting</div>
+        <div class="chip">Machine learning</div><div class="chip">Data validation</div><div class="chip">Dashboards</div>
+        <div class="chip">Reporting</div><div class="chip">Stakeholder communication</div>
+      </div>
+      <div class="sech sub"><span class="eyebrow">Tools I use</span></div>
+      <div class="tools">
+        <span class="tool">SQL</span><span class="tool">Python</span><span class="tool">R</span><span class="tool">Power BI</span><span class="tool">Tableau</span><span class="tool">Excel</span><span class="tool">Databricks</span>
+      </div>
+      <div class="sech sub"><span class="eyebrow">Certifications</span></div>
+      <p style="margin-top:12px;color:var(--muted);font-size:14.5px">Microsoft Power BI Data Analyst Associate<br>Google Advanced Data Analytics Professional Certificate<br>AWS Certified Machine Learning</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sech"><span class="eyebrow">Journey</span></div>
+    <div class="journey" style="margin-top:22px">
+      <div><span class="when">2016 to 2020</span><h3>BEng Electrical and Electronics</h3><p>Vidyavikas Institute of Engineering, Mysore.</p></div>
+      <div><span class="when">2021 to 2024</span><h3>QA and BI Data Analyst</h3><p>Indium Software, iXie Gaming. Six commercial products, daily SQL, Power BI reporting, root-cause work on customer-reported issues.</p></div>
+      <div><span class="when">2024 to 2025</span><h3>MSc Data Science and Analytics</h3><p>Cardiff University, with a dissertation on time series forecasting.</p></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div>
+      <h2>Let's create<em>something useful</em></h2>
+      <p class="lead">I'm looking for data and analytics roles in the UK, with full right to work.</p>
+    </div>
+    <span class="rule"></span>
+    <div class="rows">
+      <span class="eyebrow">Let's connect</span>
+      <div class="row"><span class="k">Email</span><span class="v">Gnanashree.mv18@gmail.com</span><button class="copy" type="button" data-copy="Gnanashree.mv18@gmail.com">Copy</button></div>
+      <div class="row"><span class="k">Phone</span><span class="v">+44 7823 613416</span><button class="copy" type="button" data-copy="+44 7823 613416">Copy</button></div>
+      <div class="row"><span class="k">LinkedIn</span><a class="v" href="https://linkedin.com/in/gnanashree-mysuru-venkatesh">/gnanashree-mysuru-venkatesh</a></div>
+      <div class="row"><span class="k">GitHub</span><a class="v" href="https://github.com/GnanashreeMV18">/GnanashreeMV18</a></div>
+      <div class="row"><span class="k">Based in</span><span class="v">Cardiff, UK</span></div>
+    </div>
+  </section>
+
+  <button class="theme" id="theme" type="button">Switch light or dark</button>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy');
+    var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)};
+    var fail=function(){
+      var s=b.previousElementSibling,r=document.createRange();r.selectNodeContents(s);
+      var sel=getSelection();sel.removeAllRanges();sel.addRange(r);b.textContent='Selected'};
+    try{navigator.clipboard.writeText(t).then(ok,fail)}catch(e){fail()}
+  });
+});
+document.getElementById('theme').addEventListener('click',function(){
+  var r=document.documentElement,d=r.getAttribute('data-theme');
+  var light=d?d==='light':matchMedia('(prefers-color-scheme: light)').matches;
+  r.setAttribute('data-theme',light?'dark':'light');
+});
+</script>
+
+</body>
+</html>
