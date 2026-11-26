@@ -203,9 +203,12 @@ var cue=document.getElementById('scrollcue');function cu(){if(cue)cue.classList.
 /* talking avatar: green-screen video keyed to transparency on a canvas */
 var v=document.getElementById('avvid'),cv=document.getElementById('avcv'),pb=document.getElementById('playbtn');
 if(v&&cv&&window.HTMLCanvasElement){var cx=cv.getContext('2d',{willReadFrequently:true}),off=document.createElement('canvas'),ox=off.getContext('2d',{willReadFrequently:true}),srcs=['avatar.mp4','avatar.webm'],si=0,raf=0,live=false;
-function key(){if(!v.videoWidth)return;var W=Math.min(720,v.videoWidth),H=Math.round(W*v.videoHeight/v.videoWidth);if(off.width!==W){off.width=cv.width=W;off.height=cv.height=H}
-ox.drawImage(v,0,0,W,H);var im=ox.getImageData(0,0,W,H),d=im.data,i,r,g,b,m,e;
-for(i=0;i<d.length;i+=4){r=d[i];g=d[i+1];b=d[i+2];m=r>b?r:b;e=g-m;if(e>70){d[i+3]=0}else if(e>18){d[i+3]=Math.round(255*(70-e)/52);d[i+1]=m}else if(e>0){d[i+1]=m}}
+var A=null,B=null;
+function key(){if(!v.videoWidth)return;var W=Math.min(720,v.videoWidth),H=Math.round(W*v.videoHeight/v.videoWidth);if(off.width!==W){off.width=cv.width=W;off.height=cv.height=H;A=new Uint8ClampedArray(W*H);B=new Uint8ClampedArray(W*H)}
+ox.drawImage(v,0,0,W,H);var im=ox.getImageData(0,0,W,H),d=im.data,i,p,r,g,b,m,e,x,y,n=W*H;
+for(i=0,p=0;p<n;i+=4,p++){r=d[i];g=d[i+1];b=d[i+2];m=r>b?r:b;e=g-m;A[p]=e>60?0:(e>10?Math.round(255*(60-e)/50):255);if(e>-14)d[i+1]=m}
+for(y=0;y<H;y++){for(x=0;x<W;x++){p=y*W+x;m=A[p];if(x>0&&A[p-1]<m)m=A[p-1];if(x<W-1&&A[p+1]<m)m=A[p+1];B[p]=m}}
+for(y=0;y<H;y++){for(x=0;x<W;x++){p=y*W+x;m=B[p];if(y>0&&B[p-W]<m)m=B[p-W];if(y<H-1&&B[p+W]<m)m=B[p+W];d[p*4+3]=m}}
 cx.putImageData(im,0,0)}
 function loop(){key();if(!v.paused&&!v.ended)raf=(v.requestVideoFrameCallback?v.requestVideoFrameCallback(loop):requestAnimationFrame(loop))}
 function ready(){if(live)return;live=true;h.classList.remove('has-avatar','has-embed');h.classList.add('has-video');v.currentTime=Math.min(0.1,(v.duration||1)/2)}
